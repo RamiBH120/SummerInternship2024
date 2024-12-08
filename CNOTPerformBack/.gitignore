@@ -1,0 +1,5 @@
+node_modules/
+attachments/
+uploads
+.idea/
+dist/

@@ -1,0 +1,142 @@
+{
+  "name": "CNOTPERFORM",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,html,css,less,scss}\"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.20.7",
+    "@ckeditor/ckeditor5-build-classic": "^35.4.0",
+    "@ckeditor/ckeditor5-react": "^5.0.5",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "apexcharts": "^3.36.3",
+    "axios": "^1.7.2",
+    "axios-mock-adapter": "^1.22.0",
+    "babel-eslint": "^10.1.0",
+    "bootstrap": "^5.2.0",
+    "classnames": "^2.3.2",
+    "eslint": "^8.30.0",
+    "firebase": "^9.15.0",
+    "formik": "^2.2.9",
+    "i18next": "^22.4.6",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "jwt-decode": "^4.0.0",
+    "lodash": "^4.17.21",
+    "metismenujs": "^1.3.1",
+    "moment": "^2.29.4",
+    "nouislider-react": "^3.4.1",
+    "pdfmake": "^0.2.12",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
+    "react-data-table-component": "^7.5.3",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-i18next": "^12.1.1",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.1",
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.8.0",
+    "react-table": "^7.8.0",
+    "reactstrap": "^9.1.5",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.2.2",
+    "simplebar-react": "^2.4.3",
+    "socket.io-client": "^4.7.5",
+    "styled-components": "^5.3.6",
+    "toastr": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.19.1",
+    "@fullcalendar/bootstrap": "^5.11.3",
+    "@fullcalendar/core": "^5.11.3",
+    "@fullcalendar/daygrid": "^5.11.3",
+    "@fullcalendar/interaction": "^5.11.3",
+    "@fullcalendar/react": "^5.11.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "prettier": "^2.8.8",
+    "sass": "^1.54.9",
+    "tailwind-bootstrap-grid": "^5.0.1",
+    "tailwindcss": "^3.3.2",
+    "vite": "^3.1.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "babelOptions": {
+      "presets": [
+        "@babel/preset-react"
+      ]
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false,
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "globals": {
+      "$": true
+    },
+    "settings": {
+      "react": {
+        "version": "^17.0.1"
+      }
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "resolutions": {
+    "moment": "2.29.1",
+    "react-error-overlay": "6.0.11"
+  }
+}

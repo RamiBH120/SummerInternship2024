@@ -1,0 +1,24 @@
+.popular-post-container {
+    max-height: 300px; /* Ajustez cette valeur selon vos besoins */
+    overflow-y: auto;
+    margin-top: 50px;
+  }
+  
+  /* Custom scrollbar styles */
+  .popular-post-container::-webkit-scrollbar {
+    width: 6px; /* Largeur de la scrollbar */
+  }
+  
+  .popular-post-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Couleur de la poignée */
+    border-radius: 10px; /* Bordure arrondie */
+  }
+  
+  .popular-post-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Couleur de la poignée au survol */
+  }
+  
+  .popular-post-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de l'arrière-plan de la scrollbar */
+  }
+  

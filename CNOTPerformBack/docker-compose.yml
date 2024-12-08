@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+
+  mongodb:
+    image: mongo:4.2
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    ports: 
+      - 27017:27017
+    volumes:
+      - ./data/dump:/dump
+
+  backend:
+    image: 172.19.136.127:8083/internback:1.0.0
+    restart: always
+    container_name: backend
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+
+volumes: 
+  mongo-data:

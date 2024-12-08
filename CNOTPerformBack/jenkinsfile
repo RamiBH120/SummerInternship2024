@@ -1,0 +1,73 @@
+//backend+frontend pipeline
+pipeline{
+  agent any
+   
+   environment { 
+      registryCredentials = "nexus" 
+      registry = "172.19.136.127:8083" 
+   }
+
+
+  stages {
+
+// npm install for installing the required packages for the project
+  stage('Install dependencies') {
+      steps{
+         sh 'npm install'
+      }
+    }
+
+// SonarQube will analyze the source code for the project
+    stage('SonarQube Analysis') { 
+      steps{ 
+        script { 
+          def scannerHome = tool 'scanner'
+          withSonarQubeEnv { 
+            sh "${scannerHome}/bin/sonar-scanner" 
+            } 
+          } 
+        } 
+      }
+
+// Build the dependencies for the application into a single product
+    stage('Build application') {
+         steps{ 
+                sh 'npm run build'
+      }
+  }
+
+// Build product image with Docker
+  stage('Building image with Docker') { 
+        steps{
+         script { sh('docker-compose build') }
+      } 
+    }
+
+  //  Uploading Docker images into Nexus Registry
+    stage('Deploy to Nexus') {
+     steps{  
+         script {
+
+             docker.withRegistry("http://"+registry, registryCredentials ) {
+            sh('docker push $registry/internback:1.0.0 ')
+          }
+        }
+      }
+    }
+
+  //  Running application from Nexus
+    stage('Run application ') {
+     steps{  
+         script {
+           docker.withRegistry("http://"+registry, registryCredentials ) {
+
+            sh('docker pull $registry/internback:1.0.0 ')
+
+            sh('docker-compose up -d ')
+          }
+        }
+      }
+    }
+    
+  }
+}
